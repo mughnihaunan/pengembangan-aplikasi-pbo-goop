@@ -29,8 +29,8 @@
                     <!-- Tips Box -->
                     <VBox style="-fx-background-color: #e8f4f8; -fx-border-color: #3498db; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 15;" spacing="10">
                         <Text text="💡 Tips Membuat Proyek yang Baik" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #2980b9;"/>
-                        <Text text="✓ Mulai dengan proyek sederhana seperti 'Hello World' atau 'Kalkulator'\n✓ Berikan instruksi yang jelas dan step-by-step\n✓ Sertakan contoh output yang diharapkan\n✓ Tentukan deadline yang realistis (minimal 3-7 hari)\n✓ Pastikan proyek sesuai dengan level pemahaman siswa"
-                              style="-fx-font-size: 13px; -fx-fill: #34495e;" wrapText="true"/>
+                        <Label text="✓ Mulai dengan proyek sederhana seperti 'Hello World' atau 'Kalkulator'&#10;✓ Berikan instruksi yang jelas dan step-by-step&#10;✓ Sertakan contoh output yang diharapkan&#10;✓ Tentukan deadline yang realistis (minimal 3-7 hari)&#10;✓ Pastikan proyek sesuai dengan level pemahaman siswa"
+                              style="-fx-font-size: 13px; -fx-text-fill: #34495e;" wrapText="true"/>
                     </VBox>
                     
                     <VBox styleClass="card" spacing="15">

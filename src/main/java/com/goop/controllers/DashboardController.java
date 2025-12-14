@@ -91,7 +91,10 @@ public class DashboardController {
     private Separator guruSeparator;
 
     @FXML
-    private Button btnCreateProyek, btnCreateMateri, btnCreateTes;
+    private Button btnCreateProyek, btnCreateMateri, btnCreateTes, btnCreateModul;
+
+    @FXML
+    private Button btnModul;
 
     // ==================== INSTANCE VARIABLES ====================
 
@@ -169,13 +172,19 @@ public class DashboardController {
                 int jumlahProyek = dataStore.getProyekBySiswaId(siswa.getId()).size();
                 jumlahProyekLabel.setText(String.valueOf(jumlahProyek));
 
-                // Menu untuk siswa: semua menu visible
+                // Menu untuk siswa: hanya Dashboard, Tes Kognitif, dan Proyek (sesuai use case)
                 btnTes.setVisible(true);
                 btnTes.setManaged(true);
-                btnHasil.setVisible(true);
-                btnHasil.setManaged(true);
+
                 btnProyek.setVisible(true);
                 btnProyek.setManaged(true);
+
+                // Hide Materi dan Hasil dari siswa (tidak ada di use case)
+                btnMateri.setVisible(false);
+                btnMateri.setManaged(false);
+
+                btnHasil.setVisible(false);
+                btnHasil.setManaged(false);
 
             } else if (currentUser instanceof Guru) {
                 // Untuk guru, tampilkan statistik berbeda
@@ -189,11 +198,9 @@ public class DashboardController {
                 int totalProyek = dataStore.getAllProyek().size();
                 jumlahProyekLabel.setText(String.valueOf(totalProyek));
 
-                // Menu untuk guru: sembunyikan tes & hasil siswa
+                // Menu untuk guru: sembunyikan menu siswa (tes untuk mengerjakan)
                 btnTes.setVisible(false);
                 btnTes.setManaged(false);
-                btnHasil.setVisible(false);
-                btnHasil.setManaged(false);
 
                 // Show Guru-specific menus
                 guruSeparator.setVisible(true);
@@ -211,14 +218,22 @@ public class DashboardController {
 
                 btnCreateTes.setVisible(true);
                 btnCreateTes.setManaged(true);
+                btnCreateModul.setVisible(true);
+                btnCreateModul.setManaged(true);
 
                 // Guru TIDAK perlu menu "Proyek" - hanya siswa yang lihat proyek mereka
                 btnProyek.setVisible(false);
                 btnProyek.setManaged(false);
 
-                // Guru bisa lihat materi
+                // Guru bisa lihat materi (Modul/Materi)
                 btnMateri.setVisible(true);
                 btnMateri.setManaged(true);
+                btnModul.setVisible(true);
+                btnModul.setManaged(true);
+
+                // Guru bisa lihat histori pengerjaan siswa (sesuai use case)
+                btnHasil.setVisible(true);
+                btnHasil.setManaged(true);
             }
 
             // Statistics yang sama untuk semua role
@@ -346,6 +361,24 @@ public class DashboardController {
     private void showCreateTes() {
         SceneManager.loadScene("create-tes.fxml");
         SceneManager.setTitle("Buat Tes Kognitif Baru");
+    }
+
+    /**
+     * Show modul list (Guru only)
+     */
+    @FXML
+    private void showModul() {
+        SceneManager.loadScene("modul.fxml");
+        SceneManager.setTitle("Modul Pembelajaran");
+    }
+
+    /**
+     * Show create modul (Guru only)
+     */
+    @FXML
+    private void showCreateModul() {
+        SceneManager.loadScene("create-modul.fxml");
+        SceneManager.setTitle("Buat Modul Baru");
     }
 
     // ==================== OTHER HANDLERS ====================

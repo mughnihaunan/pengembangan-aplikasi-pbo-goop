@@ -46,6 +46,8 @@
                 
                 <Button fx:id="btnMateri" text="📚 Materi Pembelajaran" styleClass="menu-item" onAction="#showMateri" maxWidth="Infinity"/>
                 
+                <Button fx:id="btnModul" text="📖 Modul Pembelajaran" styleClass="menu-item" onAction="#showModul" maxWidth="Infinity" managed="false" visible="false"/>
+                
                 <Button fx:id="btnProyek" text="💻 Proyek"  styleClass="menu-item" onAction="#showProyek" maxWidth="Infinity"/>
                 
                 <Button fx:id="btnTes" text="✏️ Tes Kognitif" styleClass="menu-item" onAction="#showTes" maxWidth="Infinity"/>
@@ -64,6 +66,8 @@
                 <Button fx:id="btnCreateMateri" text="➕ Buat Materi" styleClass="menu-item" onAction="#showCreateMateri" maxWidth="Infinity" managed="false" visible="false"/>
                 
                 <Button fx:id="btnCreateTes" text="➕ Buat Tes" styleClass="menu-item" onAction="#showCreateTes" maxWidth="Infinity" managed="false" visible="false"/>
+                
+                <Button fx:id="btnCreateModul" text="➕ Buat Modul" styleClass="menu-item" onAction="#showCreateModul" maxWidth="Infinity" managed="false" visible="false"/>
                 
             </VBox>
             

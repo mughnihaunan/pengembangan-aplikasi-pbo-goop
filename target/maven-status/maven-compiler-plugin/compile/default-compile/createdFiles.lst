@@ -4,6 +4,7 @@ com\goop\controllers\LoginController.class
 com\goop\models\Materi.class
 com\goop\models\TesKognitif.class
 com\goop\models\Proyek.class
+com\goop\models\Modul.class
 com\goop\controllers\MonitorNilaiController.class
 com\goop\controllers\CreateProyekController$1.class
 com\goop\controllers\TesKognitifController.class
@@ -11,6 +12,7 @@ com\goop\models\Siswa.class
 module-info.class
 com\goop\models\Soal.class
 com\goop\controllers\ProyekController.class
+com\goop\controllers\CreateModulController.class
 com\goop\models\User.class
 com\goop\controllers\HasilController.class
 com\goop\controllers\CreateMateriController.class
@@ -20,6 +22,7 @@ com\goop\controllers\CreateProyekController$2.class
 com\goop\controllers\ManageSiswaController.class
 com\goop\controllers\MonitorNilaiController$2.class
 com\goop\controllers\CreateTesController.class
+com\goop\controllers\ModulController.class
 com\goop\controllers\MonitorNilaiController$1.class
 com\goop\controllers\CreateProyekController.class
 com\goop\Main.class

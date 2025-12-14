@@ -1,0 +1,21 @@
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Build
+target/
+*.class
+*.jar
+*.war
+
+# Maven
+.mvn/
+
+# Presentation Files (DO NOT COMMIT)
+PRESENTATION_GUIDE.md
+CODE_CLEANUP_REPORT.md
+
+# Logs
+*.log

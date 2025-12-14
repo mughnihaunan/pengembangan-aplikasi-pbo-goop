@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Modul Scene - Daftar modul pembelajaran -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.goop.controllers.ModulController"
+            styleClass="dashboard-container">
+    
+    <top>
+        <HBox styleClass="content-area" spacing="20" alignment="CENTER_LEFT">
+            <padding><Insets top="20" right="30" bottom="10" left="30"/></padding>
+            <Button text="← Kembali" onAction="#handleBack" styleClass="btn-secondary"/>
+            <Text text="📦 Modul Pembelajaran" styleClass="page-title"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true" style="-fx-background-color: transparent;">
+            <content>
+                <StackPane>
+                    <!-- Modul List View -->
+                    <VBox fx:id="modulListContainer" styleClass="content-area" spacing="15">
+                        <padding><Insets top="10" right="30" bottom="30" left="30"/></padding>
+                    </VBox>
+                    
+                    <!-- Modul Detail View -->
+                    <VBox fx:id="modulDetailView" styleClass="content-area" spacing="20" visible="false" managed="false">
+                        <padding><Insets top="10" right="30" bottom="30" left="30"/></padding>
+                        
+                        <HBox>
+                            <Button text="← Kembali ke Daftar" onAction="#handleBackToList" styleClass="btn-secondary"/>
+                        </HBox>
+                        
+                        <VBox styleClass="card" spacing="15">
+                            <Text fx:id="detailJudul" styleClass="page-title"/>
+                            
+                            <ScrollPane fx:id="scrollDetail" fitToWidth="true" prefHeight="400" style="-fx-background-color: transparent;">
+                                <VBox>
+                                    <Text fx:id="detailKonten" wrappingWidth="700" style="-fx-font-size: 14px;"/>
+                                </VBox>
+                            </ScrollPane>
+                        </VBox>
+                    </VBox>
+                </StackPane>
+            </content>
+        </ScrollPane>
+    </center>
+    
+</BorderPane>

@@ -31,19 +31,25 @@ Aplikasi ini dikembangkan berdasarkan jurnal penelitian dari Universitas Negeri 
 - Penjelasan dengan contoh code dan use case
 - Estimasi waktu baca untuk setiap materi
 
-### 2. **Manajemen Proyek**
+### 2. **Modul Pembelajaran** *(New Feature - Independent from Materi)*
+- Modul pembelajaran terpisah sebagai resource pembelajaran tambahan
+- Guru dapat membuat dan mengelola modul secara independent
+- Siswa dapat mengakses modul yang telah dibuat guru
+- Topik-based organization untuk kemudahan navigasi
+
+### 3. **Manajemen Proyek**
 - Daftar proyek OOP dengan deadline tracking
 - Status proyek: Belum Dikerjakan → Dikerjakan → Selesai → Tervalidasi
 - Upload dan submit hasil proyek
 - Validasi dan pemberian skor oleh guru
 
-### 3. **Tes Kognitif**
+### 4. **Tes Kognitif**
 - Tes pilihan ganda untuk mengukur pemahaman OOP
 - Timer countdown selama pengerjaan tes
 - Automatic scoring dan feedback
 - Histori hasil tes
 
-### 4. **Dashboard Interaktif**
+### 5. **Dashboard Interaktif**
 - Score boxes menampilkan: Skor Kognitif, Jumlah Proyek, Materi, dan Tes
 - Navigasi sidebar yang user-friendly
 - Statistik pembelajaran real-time

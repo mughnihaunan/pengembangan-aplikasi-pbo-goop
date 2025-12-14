@@ -57,20 +57,7 @@ public class ProyekController {
     private void loadProyekList() {
         proyekCardsContainer.getChildren().clear();
 
-        // DEBUG LOGS
-        System.out.println("=== DEBUG PROYEK CONTROLLER ===");
-        System.out.println("Current Siswa: " + currentSiswa.getNamaLengkap() + " (ID: " + currentSiswa.getId() + ")");
-
         List<Proyek> proyekList = dataStore.getProyekBySiswaId(currentSiswa.getId());
-        System.out.println("Found " + proyekList.size() + " proyek for siswa ID " + currentSiswa.getId());
-
-        // Also check ALL proyek
-        List<Proyek> allProyek = dataStore.getAllProyek();
-        System.out.println("Total proyek in DataStore: " + allProyek.size());
-        for (Proyek p : allProyek) {
-            System.out.println("  - Proyek: " + p.getJudul() + " (siswaId=" + p.getSiswaId() + ")");
-        }
-        System.out.println("===============================");
 
         if (proyekList.isEmpty()) {
             Label empty = new Label("Belum ada proyek yang di-assign");

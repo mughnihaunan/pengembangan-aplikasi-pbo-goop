@@ -69,6 +69,11 @@ public class DataStore {
     private List<Materi> materiList;
 
     /**
+     * List untuk meny impan semua modul pembelajaran (separate entity dari Materi)
+     */
+    private List<Modul> modulList;
+
+    /**
      * Map untuk menyimpan hasil tes siswa
      * Key: siswaId, Value: Map<tesId, skor>
      */
@@ -92,6 +97,7 @@ public class DataStore {
     private int nextProyekId = 1;
     private int nextTesId = 1;
     private int nextMateriId = 1;
+    private int nextModulId = 1;
     private int nextSoalId = 1;
 
     // ==================== CONSTRUCTOR ====================
@@ -108,6 +114,7 @@ public class DataStore {
         proyekList = new ArrayList<>();
         tesKognitifList = new ArrayList<>();
         materiList = new ArrayList<>();
+        modulList = new ArrayList<>();
         hasilTesMap = new HashMap<>();
         proyekCodeMap = new HashMap<>();
 
@@ -485,6 +492,63 @@ public class DataStore {
         for (Materi materi : materiList) {
             if (materi.getId() == id) {
                 return materi;
+            }
+        }
+        return null;
+    }
+
+    // ==================== MODUL METHODS ====================
+
+    /**
+     * Membuat modul pembelajaran baru
+     * 
+     * @param judul     Judul modul
+     * @param konten    Konten modul
+     * @param topik     Topik modul
+     * @param idPembuat ID Guru yang membuat
+     * @return ID modul yang dibuat
+     */
+    public int createModul(String judul, String konten, String topik, int idPembuat) {
+        Modul modul = new Modul(nextModulId, judul, konten, topik, idPembuat);
+        modulList.add(modul);
+        return nextModulId++;
+    }
+
+    /**
+     * Mendapatkan semua modul
+     * 
+     * @return List of all Modul
+     */
+    public List<Modul> getAllModul() {
+        return new ArrayList<>(modulList);
+    }
+
+    /**
+     * Mendapatkan modul berdasarkan topik
+     * 
+     * @param topik Topik modul
+     * @return List of Modul dengan topik tersebut
+     */
+    public List<Modul> getModulByTopik(String topik) {
+        List<Modul> result = new ArrayList<>();
+        for (Modul modul : modulList) {
+            if (modul.getTopik().equalsIgnoreCase(topik)) {
+                result.add(modul);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Mendapatkan modul berdasarkan ID
+     * 
+     * @param id ID modul
+     * @return Modul object atau null
+     */
+    public Modul getModulById(int id) {
+        for (Modul modul : modulList) {
+            if (modul.getId() == id) {
+                return modul;
             }
         }
         return null;
