@@ -21,17 +21,7 @@ package com.goop.models;
 public class Guru extends User {
 
     // ==================== ATTRIBUTES TAMBAHAN ====================
-
-    /**
-     * NIP (Nomor Induk Pegawai) guru
-     */
-    private String nip;
-
-    /**
-     * Mata pelajaran yang diajar oleh guru
-     * Default: "Pemrograman Berorientasi Objek"
-     */
-    private String mataPelajaran;
+    // No additional attributes - Guru differentiated by role and behavior
 
     // ==================== CONSTRUCTORS ====================
 
@@ -40,7 +30,6 @@ public class Guru extends User {
      */
     public Guru() {
         super();
-        this.mataPelajaran = "Pemrograman Berorientasi Objek";
     }
 
     /**
@@ -51,55 +40,15 @@ public class Guru extends User {
      * @param password    Password
      * @param email       Email
      * @param namaLengkap Nama lengkap
-     * @param nip         NIP guru
      */
-    public Guru(int id, String username, String password, String email,
-            String namaLengkap, String nip) {
+    public Guru(int id, String username, String password, String email, String namaLengkap) {
         // Memanggil constructor parent class
         // Role di-set "GURU" secara otomatis
         super(id, username, password, email, namaLengkap, "GURU");
-
-        this.nip = nip;
-        this.mataPelajaran = "Pemrograman Berorientasi Objek";
     }
 
     // ==================== GETTERS & SETTERS ====================
-
-    /**
-     * Mendapatkan NIP guru
-     * 
-     * @return NIP
-     */
-    public String getNip() {
-        return nip;
-    }
-
-    /**
-     * Set NIP guru
-     * 
-     * @param nip NIP baru
-     */
-    public void setNip(String nip) {
-        this.nip = nip;
-    }
-
-    /**
-     * Mendapatkan mata pelajaran yang diajar
-     * 
-     * @return mata pelajaran
-     */
-    public String getMataPelajaran() {
-        return mataPelajaran;
-    }
-
-    /**
-     * Set mata pelajaran
-     * 
-     * @param mataPelajaran mata pelajaran baru
-     */
-    public void setMataPelajaran(String mataPelajaran) {
-        this.mataPelajaran = mataPelajaran;
-    }
+    // Guru uses inherited getters/setters from User class
 
     // ==================== BUSINESS METHODS ====================
 
@@ -162,8 +111,7 @@ public class Guru extends User {
                 "id=" + getId() +
                 ", username='" + getUsername() + '\'' +
                 ", namaLengkap='" + getNamaLengkap() + '\'' +
-                ", nip='" + nip + '\'' +
-                ", mataPelajaran='" + mataPelajaran + '\'' +
+                ", role='" + getRole() + '\'' +
                 '}';
     }
 }

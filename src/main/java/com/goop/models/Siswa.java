@@ -24,16 +24,6 @@ public class Siswa extends User {
     // Attributes khusus untuk Siswa (selain yang diwarisi dari User)
 
     /**
-     * NIM (Nomor Induk Mahasiswa/Siswa)
-     */
-    private String nim;
-
-    /**
-     * Kelas siswa (contoh: "XII RPL 1")
-     */
-    private String kelas;
-
-    /**
      * Skor kognitif siswa dari hasil tes
      * Default value: 0.0
      */
@@ -69,58 +59,17 @@ public class Siswa extends User {
      * @param password    Password (dari parent class)
      * @param email       Email (dari parent class)
      * @param namaLengkap Nama lengkap (dari parent class)
-     * @param nim         NIM siswa
-     * @param kelas       Kelas siswa
      */
-    public Siswa(int id, String username, String password, String email,
-            String namaLengkap, String nim, String kelas) {
+    public Siswa(int id, String username, String password, String email, String namaLengkap) {
         // Memanggil constructor parent class dengan super()
         super(id, username, password, email, namaLengkap, "SISWA");
 
         // Initialize attributes khusus Siswa
-        this.nim = nim;
-        this.kelas = kelas;
         this.skorKognitif = 0.0;
         this.proyekIds = new ArrayList<>();
     }
 
     // ==================== GETTERS & SETTERS ====================
-
-    /**
-     * Mendapatkan NIM siswa
-     * 
-     * @return NIM
-     */
-    public String getNim() {
-        return nim;
-    }
-
-    /**
-     * Set NIM siswa
-     * 
-     * @param nim NIM baru
-     */
-    public void setNim(String nim) {
-        this.nim = nim;
-    }
-
-    /**
-     * Mendapatkan kelas siswa
-     * 
-     * @return kelas
-     */
-    public String getKelas() {
-        return kelas;
-    }
-
-    /**
-     * Set kelas siswa
-     * 
-     * @param kelas kelas baru
-     */
-    public void setKelas(String kelas) {
-        this.kelas = kelas;
-    }
 
     /**
      * Mendapatkan skor kognitif siswa
@@ -212,8 +161,6 @@ public class Siswa extends User {
                 "id=" + getId() + // Menggunakan getter dari parent class
                 ", username='" + getUsername() + '\'' +
                 ", namaLengkap='" + getNamaLengkap() + '\'' +
-                ", nim='" + nim + '\'' +
-                ", kelas='" + kelas + '\'' +
                 ", skorKognitif=" + skorKognitif +
                 ", jumlahProyek=" + proyekIds.size() +
                 '}';

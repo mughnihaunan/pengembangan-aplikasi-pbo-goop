@@ -80,8 +80,8 @@ public class ManageSiswaController {
             // Tambah siswa baru
             int newId = dataStore.getAllSiswa().size() + 1;
 
-            // Constructor: id, username, password, email, namaLengkap, nim, kelas
-            Siswa siswa = new Siswa(newId, username, password, email, nama, "0000" + newId, "XII RPL");
+            // Constructor: id, username, password, email, namaLengkap
+            Siswa siswa = new Siswa(newId, username, password, email, nama);
             dataStore.addSiswa(siswa);
             SceneManager.showInfo("Berhasil", "Siswa baru berhasil ditambahkan!");
         } else {

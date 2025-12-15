@@ -55,6 +55,12 @@ public class DashboardController {
     @FXML
     private Label jumlahTesLabel;
 
+    // Score box subtitle labels (for dynamic text based on role)
+    @FXML
+    private Label skorKognitifTitle, skorKognitifSubLabel;
+    @FXML
+    private Label jumlahProyekSubLabel, jumlahMateriSubLabel, jumlahTesSubLabel;
+
     @FXML
     private VBox contentArea;
 
@@ -190,13 +196,24 @@ public class DashboardController {
                 // Untuk guru, tampilkan statistik berbeda
                 Guru guru = (Guru) currentUser;
 
-                // Total siswa (ditampilkan di box "Skor Kognitif")
+                // Total siswa (ditampilkan di box "Skor Kognitif" → update jadi "Jumlah Siswa")
                 int totalSiswa = dataStore.getAllSiswa().size();
                 skorKognitifLabel.setText(String.valueOf(totalSiswa));
+
+                // Update label text untuk Guru (ganti "Skor Kognitif" jadi "Jumlah Siswa")
+                if (skorKognitifTitle != null) {
+                    skorKognitifTitle.setText("Jumlah Siswa");
+                }
+                if (skorKognitifSubLabel != null) {
+                    skorKognitifSubLabel.setText("siswa terdaftar");
+                }
 
                 // Total proyek semua siswa
                 int totalProyek = dataStore.getAllProyek().size();
                 jumlahProyekLabel.setText(String.valueOf(totalProyek));
+                if (jumlahProyekSubLabel != null) {
+                    jumlahProyekSubLabel.setText("proyek total");
+                }
 
                 // Menu untuk guru: sembunyikan menu siswa (tes untuk mengerjakan)
                 btnTes.setVisible(false);
@@ -231,9 +248,9 @@ public class DashboardController {
                 btnModul.setVisible(true);
                 btnModul.setManaged(true);
 
-                // Guru bisa lihat histori pengerjaan siswa (sesuai use case)
-                btnHasil.setVisible(true);
-                btnHasil.setManaged(true);
+                // Guru TIDAK punya menu "Hasil Belajar" (tidak ada di use case diagram)
+                btnHasil.setVisible(false);
+                btnHasil.setManaged(false);
             }
 
             // Statistics yang sama untuk semua role

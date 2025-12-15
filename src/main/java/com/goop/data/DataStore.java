@@ -602,23 +602,19 @@ public class DataStore {
         // ===== SAMPLE USERS =====
 
         // Siswa 1 - Sandy Putra (sesuai dengan jurnal)
-        Siswa siswa1 = new Siswa(1, "sandy", "123", "sandy@email.com",
-                "Sandy Putra Pratama", "12345", "XII RPL");
+        Siswa siswa1 = new Siswa(1, "sandy", "123", "sandy@email.com", "Sandy Putra Pratama");
         siswaList.add(siswa1);
 
         // Siswa 2 - Budi
-        Siswa siswa2 = new Siswa(2, "budi", "123", "budi@email.com",
-                "Budi Santoso", "12346", "XII RPL");
+        Siswa siswa2 = new Siswa(2, "budi", "123", "budi@email.com", "Budi Santoso");
         siswaList.add(siswa2);
 
         // Siswa 3 - Ani
-        Siswa siswa3 = new Siswa(3, "ani", "123", "ani@email.com",
-                "Ani Wijaya", "12347", "XII RPL");
+        Siswa siswa3 = new Siswa(3, "ani", "123", "ani@email.com", "Ani Wijaya");
         siswaList.add(siswa3);
 
         // Guru 1 - Bambang Sujatmiko (sesuai dengan jurnal)
-        Guru guru1 = new Guru(4, "bambang", "123", "bambang@email.com",
-                "Bambang Sujatmiko", "98765");
+        Guru guru1 = new Guru(4, "bambang", "123", "bambang@email.com", "Bambang Sujatmiko");
         guruList.add(guru1);
 
         System.out.println("✓ Created " + siswaList.size() + " siswa and " + guruList.size() + " guru");

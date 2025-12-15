@@ -94,12 +94,12 @@
                     <!-- Dashboard Cards - Grid untuk score boxes -->
                     <GridPane fx:id="scoreGrid" hgap="20" vgap="20" visible="true">
                         
-                        <!-- Score Box 1: Skor Kognitif -->
+                        <!-- Score Box 1: Skor Kognitif / Jumlah Siswa (dynamic) -->
                         <VBox styleClass="score-box" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="0"
                               prefWidth="250" prefHeight="150">
-                            <Label text="Skor Kognitif" styleClass="score-label"/>
+                            <Label fx:id="skorKognitifTitle" text="Skor Kognitif" styleClass="score-label"/>
                             <Label fx:id="skorKognitifLabel" text="0" styleClass="score-value"/>
-                            <Label text="dari 100" styleClass="score-label"/>
+                            <Label fx:id="skorKognitifSubLabel" text="dari 100" styleClass="score-label"/>
                         </VBox>
                         
                         <!-- Score Box 2: Jumlah Proyek -->
@@ -107,7 +107,7 @@
                               prefWidth="250" prefHeight="150">
                             <Label text="Jumlah Proyek" styleClass="score-label"/>
                             <Label fx:id="jumlahProyekLabel" text="0" styleClass="score-value"/>
-                            <Label text="proyek aktif" styleClass="score-label"/>
+                            <Label fx:id="jumlahProyekSubLabel" text="proyek aktif" styleClass="score-label"/>
                         </VBox>
                         
                         <!-- Score Box 3: Materi Dipelajari -->
@@ -115,7 +115,7 @@
                               prefWidth="250" prefHeight="150">
                             <Label text="Materi Tersedia" styleClass="score-label"/>
                             <Label fx:id="jumlahMateriLabel" text="0" styleClass="score-value"/>
-                            <Label text="materi OOP" styleClass="score-label"/>
+                            <Label fx:id="jumlahMateriSubLabel" text="materi OOP" styleClass="score-label"/>
                         </VBox>
                         
                         <!-- Score Box 4: Tes Tersedia -->
@@ -123,7 +123,7 @@
                               prefWidth="250" prefHeight="150">
                             <Label text="Tes Tersedia" styleClass="score-label"/>
                             <Label fx:id="jumlahTesLabel" text="0" styleClass="score-value"/>
-                            <Label text="tes kognitif" styleClass="score-label"/>
+                            <Label fx:id="jumlahTesSubLabel" text="tes kognitif" styleClass="score-label"/>
                         </VBox>
                         
                     </GridPane>
