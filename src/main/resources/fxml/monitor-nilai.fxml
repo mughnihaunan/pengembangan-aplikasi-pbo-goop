@@ -19,7 +19,7 @@
         <HBox styleClass="content-area" spacing="20" alignment="CENTER_LEFT">
             <padding><Insets top="20" right="30" bottom="10" left="30"/></padding>
             <Button text="← Kembali" onAction="#handleBack" styleClass="btn-secondary"/>
-            <Text text="Monitor Nilai dan Histori Siswa" styleClass="page-title"/>
+            <Text text="Monitor Nilai" styleClass="page-title"/>
         </HBox>
     </top>
     
