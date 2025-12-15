@@ -79,6 +79,9 @@ public class DashboardController {
     private Button btnMonitorNilai;
 
     @FXML
+    private Button btnHistori;
+
+    @FXML
     private Separator guruSeparator;
 
     @FXML
@@ -89,15 +92,12 @@ public class DashboardController {
 
     // ==================== INSTANCE VARIABLES ====================
 
-    
     private DataStore dataStore;
 
-    
     private User currentUser;
 
     // ==================== INITIALIZATION ====================
 
-    
     @FXML
     public void initialize() {
         System.out.println("DashboardController initialized");
@@ -125,7 +125,6 @@ public class DashboardController {
         }
     }
 
-    
     private void loadUserData() {
         // Set welcome text
         welcomeText.setText("Selamat Datang, " + currentUser.getNamaLengkap() + "!");
@@ -137,7 +136,6 @@ public class DashboardController {
         System.out.println("✓ User data loaded: " + currentUser.getNamaLengkap());
     }
 
-    
     private void loadStatistics() {
         try {
             // Jika user adalah siswa, tampilkan statistics siswa
@@ -200,6 +198,8 @@ public class DashboardController {
                 btnManageSiswa.setManaged(true);
                 btnMonitorNilai.setVisible(true);
                 btnMonitorNilai.setManaged(true);
+                btnHistori.setVisible(true);
+                btnHistori.setManaged(true);
 
                 btnCreateProyek.setVisible(true);
                 btnCreateProyek.setManaged(true);
@@ -253,7 +253,6 @@ public class DashboardController {
 
     // ==================== MENU NAVIGATION HANDLERS ====================
 
-    
     @FXML
     private void showDashboard() {
         System.out.println("Dashboard menu clicked");
@@ -271,7 +270,6 @@ public class DashboardController {
         SceneManager.showInfo("Info", "Anda sudah berada di halaman Dashboard!");
     }
 
-    
     @FXML
     private void showMateri() {
         System.out.println("Materi menu clicked");
@@ -279,7 +277,6 @@ public class DashboardController {
         SceneManager.setTitle("Materi Pembelajaran");
     }
 
-    
     @FXML
     private void showProyek() {
         System.out.println("Proyek menu clicked");
@@ -287,7 +284,6 @@ public class DashboardController {
         SceneManager.setTitle("Daftar Proyek");
     }
 
-    
     @FXML
     private void showTes() {
         System.out.println("Tes menu clicked");
@@ -295,7 +291,6 @@ public class DashboardController {
         SceneManager.setTitle("Tes Kognitif");
     }
 
-    
     @FXML
     private void showHasil() {
         System.out.println("Hasil menu clicked");
@@ -303,7 +298,6 @@ public class DashboardController {
         SceneManager.setTitle("Hasil Belajar");
     }
 
-    
     @FXML
     private void showManageSiswa() {
         System.out.println("Manage Siswa menu clicked");
@@ -311,7 +305,6 @@ public class DashboardController {
         SceneManager.setTitle("Kelola Siswa");
     }
 
-    
     @FXML
     private void showMonitorNilai() {
         System.out.println("Monitor Nilai menu clicked");
@@ -319,44 +312,43 @@ public class DashboardController {
         SceneManager.setTitle("Monitor Nilai Siswa");
     }
 
-    
     @FXML
     private void showCreateProyek() {
         SceneManager.loadScene("create-proyek.fxml");
         SceneManager.setTitle("Buat Proyek Baru");
     }
 
-    
     @FXML
     private void showCreateMateri() {
         SceneManager.loadScene("create-materi.fxml");
         SceneManager.setTitle("Buat Materi Baru");
     }
 
-    
     @FXML
     private void showCreateTes() {
         SceneManager.loadScene("create-tes.fxml");
         SceneManager.setTitle("Buat Tes Kognitif Baru");
     }
 
-    
     @FXML
     private void showModul() {
         SceneManager.loadScene("modul.fxml");
         SceneManager.setTitle("Modul Pembelajaran");
     }
 
-    
     @FXML
     private void showCreateModul() {
         SceneManager.loadScene("create-modul.fxml");
         SceneManager.setTitle("Buat Modul Baru");
     }
 
-    // ==================== OTHER HANDLERS ====================
+    @FXML
+    private void handleHistoriPengerjaan() {
+        setActiveMenuItem(btnHistori);
+        SceneManager.loadScene("histori.fxml");
+        SceneManager.setTitle("Histori Pengerjaan");
+    }
 
-    
     @FXML
     private void handleLogout() {
         System.out.println("Logout button clicked");
@@ -380,7 +372,6 @@ public class DashboardController {
 
     // ==================== HELPER METHODS ====================
 
-    
     private void setActiveMenuItem(Button activeButton) {
         // Remove active class dari semua menu buttons
         btnDashboard.getStyleClass().remove("active");
